@@ -42,7 +42,7 @@ export function findFlowFilesAsync(
     // All the valid file paths that we have found.
     const filePaths: FlowFileList = [];
     // Track ignored files
-    const ig = ignore().add(ignoredDirectories);
+    // const ig = ignore().add(ignoredDirectories);
 
     // Begin the recursion!
     processDirectory(rootDirectory, reporter);
@@ -90,10 +90,10 @@ export function findFlowFilesAsync(
       // Get the file path for this file.
       const filePath = path.join(directory, fileName);
       // Check whether file should be skipped
-      if (ig.ignores(filePath)) {
-        done();
-        return;
-      }
+      // if (ig.ignores(filePath)) {
+      //   done();
+      //   return;
+      // }
       // Get the stats for the file.
       fs.lstat(filePath, (error, stats) => {
         if (error) {
