@@ -102,7 +102,7 @@ export function findFlowFilesAsync(
         // If this is a directory...
         if (stats.isDirectory()) {
           // ...and it is not an ignored directory...
-          if (fileName !== "node_modules" && fileName !== "transpiled") {
+          if (fileName !== "node_modules" && fileName !== "flow-typed" && fileName !== "transpiled") {
             // ...then recursively process the directory.
             processDirectory(filePath, reporter);
           }
